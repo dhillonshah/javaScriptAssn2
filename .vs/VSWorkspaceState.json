@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\views",
+    "\\bin",
+    "\\config",
+    "\\models",
+    "\\public",
+    "\\public\\javascripts",
+    "\\public\\stylesheets",
+    "\\routes",
     "\\views\\tasks"
   ],
-  "SelectedNode": "\\views\\tasks\\index.hbs",
+  "SelectedNode": "\\views",
   "PreviewInSolutionExplorer": false
 }

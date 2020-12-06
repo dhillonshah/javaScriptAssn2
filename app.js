@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//add new task manager
-var tasksRouter = require('./routes/tasks');
+//add new Lit Fitness
+var workoutsRouter = require('./routes/workouts');
 
 //Ref for Auth
 const passport = require('passport')
@@ -35,7 +35,7 @@ mongoose.connect(globals.db,
 //Passport Initialization
 //1. Configure app to manage sessions
 app.use(session({
-    secret: 'TaskManagerSecret',
+    secret: 'workoutManagerSecret',
     resave: true,
     saveUninitialized: false
 }))
@@ -65,7 +65,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/tasks', tasksRouter);
+app.use('/workouts', workoutsRouter);
 
 
 // catch 404 and forward to error handler

@@ -7,13 +7,13 @@ const User = require('../models/user')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Task Manager' });
+    res.render('index', { title: 'Lit Fitness' });
 });
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', {
-        title: 'Task Manager',
+        title: 'Lit Fitness',
         user: req.user
     });
 });
@@ -21,9 +21,14 @@ router.get('/', function (req, res, next) {
 /*GET/about*/
 router.get('/about', (req, res) => {
     res.render('about', {
-        message: 'Content from the controller goes here',
+        message: 'Lit Fitness Web Application gives you the oppertunity to Book a WorkOut.',
         user: req.user
     })
+})
+
+//GET /register
+router.get('/register', (req, res, next) => {
+    res.render('register')
 })
 
 //POST /Register
@@ -38,9 +43,9 @@ router.post('/register', (req, res, next) => {
             res.end(err)
         }
         else {
-            //Log the User in and redirect to /tasks
+            //Log the User in and redirect to /workouts
             req.login(user, (err) => {
-                res.redirect('/tasks')
+                res.redirect('/workouts')
             })
         }
     })
@@ -62,7 +67,7 @@ router.get('/login', (req, res, next) => {
 
 //POST /Login
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/tasks',
+    successRedirect: '/workouts',
     failureRedirect: '/login',
     failureMessage: 'Invalid Login'
 }))

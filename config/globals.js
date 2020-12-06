@@ -1,4 +1,4 @@
 module.exports =
 {
-    'db': 'mongodb+srv://DiljotDhillon:Turang1313@clustertaskmanager.6hf30.mongodb.net/tasks'
+    'db': 'mongodb+srv://DiljotDhillon:Turang1313@clusterworkoutmanager.6hf30.mongodb.net/workouts'
 }
